@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 import NavBar from './navbar/NavBar';
+import orderService from './services/orderService';
+
+function handleSuccess(res) {
+  console.log('res', res);
+}
 
 function App() {
+  useEffect(() => orderService.getItems(handleSuccess));
+
   return (
     <div className="App">
       <NavBar />

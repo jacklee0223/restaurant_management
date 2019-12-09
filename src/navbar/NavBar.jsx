@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import orderService from '../services/orderService';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -9,14 +8,6 @@ export default class NavBar extends Component {
       show: false
     };
   }
-
-  componentDidMount() {
-    orderService.getItems(this.handleSuccess);
-  }
-
-  handleSuccess = res => {
-    console.log('res', res);
-  };
 
   render() {
     return <div>NavBar</div>;
